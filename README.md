@@ -78,17 +78,17 @@ The screenshots below follow the lab in order: the server and its environment, t
 
 **Figure 5: MicroSIP on the laptop.** The green "Online" status at the bottom shows extension 101 is registered with the PBX.
 
-![Sipnetic registered](06-sipnetic-mobile-registration.png)
+![Sipnetic registered](06-sipnetic-mobile-registration.jpg)
 
 **Figure 6: Sipnetic on the phone.** The green check next to `102@192.168.18.142` shows extension 102 is registered. This is the app where the transport was set to UDP, which fixed the "unavailable" problem described in section 6.
 
 ### Call test
 
-![Phone ringing](07-phone-receiving-call-ringing.png)
+![Phone ringing](07-phone-receiving-call-ringing.jpg)
 
 **Figure 7: The phone receiving a call.** Extension 101 calls extension 102 and the phone shows an incoming call.
 
-![Call connected on the phone](08-phone-call-connected-state.png)
+![Call connected on the phone](08-phone-call-connected-state.jpg)
 
 **Figure 8: Call connected.** The phone shows an active call with a running timer (0:50), confirming the call was answered and held.
 

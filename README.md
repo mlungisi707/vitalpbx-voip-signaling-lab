@@ -156,13 +156,3 @@ database show registrar/contact
 A stale entry can be removed with `database del registrar/contact <key>` using the key shown in that list, but in this lab the old entries simply expired on their own. The dashboard counter lagged behind the CLI.
 
 **The VM failed to boot after the Wi-Fi dropped and the VM was rebooted.** The console showed `PXE-E06: Option ROM requires DDIM support`, which means the VM fell back to a network boot because it could not find a bootable disk. The VirtualBox boot order and the storage settings were checked.
-
-> TODO: add what fixed the boot problem.
-
-## 7. Next Steps
-
-**Quality of Service (QoS).** QoS means marking voice packets so the network can treat them as higher priority than ordinary traffic. VitalPBX's PJSIP Settings page does not expose QoS options, so the planned approach is to use Asterisk's own settings: `tos` and `cos` on the PJSIP transport for SIP signaling (typically DSCP CS3), and `tos_audio` and `cos_audio` on each endpoint for voice (typically DSCP EF), through a custom configuration file that the web interface does not overwrite. The result would be verified in Wireshark by checking the Differentiated Services field of SIP and RTP packets before and after the change. The first capture attempt was interrupted when the Wi-Fi connection dropped, but a later capture completed (figures 11 to 14), so the same capture method can be used to compare the DSCP values before and after the change.
-
-**SIP trunk.** Connect VitalPBX to an external SIP provider so the extensions can place and receive calls on the public phone network.
-
-**IVR auto-attendant.** Build a voice menu ("press 1 for sales, press 2 for support") that routes inbound calls to extensions or groups.

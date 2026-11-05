@@ -124,7 +124,7 @@ Wireshark was run on the Windows laptop, capturing on the Wi-Fi adapter, which c
 
 A recording of the full call flow, from the idle registered state, through a call from 101 to 102 and the RTP traffic during it, to the call ending cleanly:
 
-[Watch the live call demo on YouTube](YOUR_YOUTUBE_LINK_HERE)
+[Watch the live call demo on YouTube](https://youtu.be/9q3wPNNm4yo)
 
 ## 5. Security: the VitalPBX Firewall
 

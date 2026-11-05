@@ -68,7 +68,7 @@ The screenshots below follow the lab in order: the server and its environment, t
 
 **Figure 3: VitalPBX web dashboard.** The management interface loads in a browser at `http://192.168.18.142` and shows system usage and service status.
 
-![Extensions list](04-vitalpbx-extensions-table.png)
+![Extensions list](04-viatlpbx-extensions-table.png)
 
 **Figure 4: Extensions list.** The two extensions created for the lab, 101 - Laptop and 102 - Phone.
 

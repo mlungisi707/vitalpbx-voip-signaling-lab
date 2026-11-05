@@ -84,7 +84,7 @@ The screenshots below follow the lab in order: the server and its environment, t
 
 ### Call test
 
-![Phone ringing](07-phone-receiving-call-ringing.jpg)
+![Phone ringing](07-phone-receving-call-ringing.jpg)
 
 **Figure 7: The phone receiving a call.** Extension 101 calls extension 102 and the phone shows an incoming call.
 

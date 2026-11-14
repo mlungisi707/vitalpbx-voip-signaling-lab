@@ -92,7 +92,7 @@ The screenshots below follow the lab in order: the server and its environment, t
 
 **Figure 8: Call connected.** The phone shows an active call with a running timer (0:50), confirming the call was answered and held.
 
-![Incoming call on the laptop](images09-microsip-incoming-call-toast.png)
+![Incoming call on the laptop](images/09-microsip-incoming-call-toast.png)
 
 **Figure 9: Call in the opposite direction.** MicroSIP on the laptop shows an incoming call notification from extension 102, so calling works both ways.
 

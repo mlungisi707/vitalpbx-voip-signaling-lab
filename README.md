@@ -56,47 +56,47 @@ The screenshots below follow the lab in order: the server and its environment, t
 
 ### Server and environment
 
-![VirtualBox VM hardware](01-virtualbox-vm-hardware-specs.png)
+![VirtualBox VM hardware](images/01-virtualbox-vm-hardware-specs.png)
 
 **Figure 1: VirtualBox settings for the VitalPBX VM.** The VM has 2048 MB of RAM and 2 CPU cores, and its network adapter is set to Bridged Adapter (Intel PRO/1000). Bridged mode is what lets the VM receive its own address from the home router instead of sitting behind the host's NAT.
 
-![Linux console banner](02-linux-cli-system-banner.png)
+![Linux console banner](images/02-linux-cli-system-banner.png)
 
 **Figure 2: Server console after login.** The banner shows Debian GNU/Linux 12 (bookworm), VitalPBX 4.5.4-2, Asterisk 20.21.0, and the server's address, 192.168.18.142.
 
-![VitalPBX dashboard](03-vitalpbx-gui-dashboard.png)
+![VitalPBX dashboard](images/03-vitalpbx-gui-dashboard.png)
 
 **Figure 3: VitalPBX web dashboard.** The management interface loads in a browser at `http://192.168.18.142` and shows system usage and service status.
 
-![Extensions list](04-viatlpbx-extensions-table.png)
+![Extensions list](images/04-viatlpbx-extensions-table.png)
 
 **Figure 4: Extensions list.** The two extensions created for the lab, 101 - Laptop and 102 - Phone.
 
 ### Registered endpoints
 
-![MicroSIP registered](05-microsip-endpoint-registration.png)
+![MicroSIP registered](images/05-microsip-endpoint-registration.png)
 
 **Figure 5: MicroSIP on the laptop.** The green "Online" status at the bottom shows extension 101 is registered with the PBX.
 
-![Sipnetic registered](06-sipnetic-mobile-registration.jpg)
+![Sipnetic registered](images/06-sipnetic-mobile-registration.jpg)
 
 **Figure 6: Sipnetic on the phone.** The green check next to `102@192.168.18.142` shows extension 102 is registered. This is the app where the transport was set to UDP, which fixed the "unavailable" problem described in section 6.
 
 ### Call test
 
-![Phone ringing](07-phone-receving-call-ringing.jpg)
+![Phone ringing](images/07-phone-receving-call-ringing.jpg)
 
 **Figure 7: The phone receiving a call.** Extension 101 calls extension 102 and the phone shows an incoming call.
 
-![Call connected on the phone](08-phone-call-connected-state.jpg)
+![Call connected on the phone](images/08-phone-call-connected-state.jpg)
 
 **Figure 8: Call connected.** The phone shows an active call with a running timer (0:50), confirming the call was answered and held.
 
-![Incoming call on the laptop](09-microsip-incoming-call-toast.png)
+![Incoming call on the laptop](images09-microsip-incoming-call-toast.png)
 
 **Figure 9: Call in the opposite direction.** MicroSIP on the laptop shows an incoming call notification from extension 102, so calling works both ways.
 
-![Active call on the dashboard](10-vitalpbx-active-call-telemetry.png)
+![Active call on the dashboard](images/10-vitalpbx-active-call-telemetry.png)
 
 **Figure 10: Active call on the PBX.** While the call is up, the VitalPBX dashboard shows 1 active call.
 
@@ -104,19 +104,19 @@ The screenshots below follow the lab in order: the server and its environment, t
 
 Wireshark was run on the Windows laptop, capturing on the Wi-Fi adapter, which carries the traffic between the laptop, the PBX, and the phone.
 
-![Registration handshake](11-wireshark-pre-call-registration.png)
+![Registration handshake](images/11-wireshark-pre-call-registration.png)
 
 **Figure 11: Registration before the call.** The SIP handshake shows a `REGISTER` request, a `401 Unauthorized` response, and then `200 OK`. The 401 is normal: the server first challenges the client to authenticate, and the client then repeats the request with its credentials.
 
-![RTP media stream](12-wireshark-active-rtp-streams.png)
+![RTP media stream](images/12-wireshark-active-rtp-streams.png)
 
 **Figure 12: Voice traffic during the call.** After the call is answered, a steady stream of RTP packets carries the audio between the endpoints. RTP (Real-time Transport Protocol) is the protocol that carries the voice samples, separate from the SIP signaling that sets up the call.
 
-![Call teardown](13-wireshark-post-call-termination.png)
+![Call teardown](images/13-wireshark-post-call-termination.png)
 
 **Figure 13: Call teardown.** When the call ends, one side sends `BYE` and the other answers `200 OK`. ICMP "port unreachable" packets after the call are typical, because the media ports close and late RTP packets have nowhere to go.
 
-![Wireshark VoIP calls](14-wireshark-voip-call-session-log.png)
+![Wireshark VoIP calls](images/14-wireshark-voip-call-session-log.png)
 
 **Figure 14: Wireshark's VoIP Calls view.** Wireshark's telephony tool lists the call from `sip:101@192.168.18.142` to `sip:102@192.168.18.142`, with a duration of 00:00:33 and a completed state.
 
